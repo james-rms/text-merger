@@ -20,7 +20,13 @@ fn main() {
             println!("Writing out the Iliad for the {n}th time...");
         }
         for line in BOOK.lines() {
-            let first_letter = line.chars().next().filter(|c| c.is_alphabetic());
+            let first_letter = line.chars().next().and_then(|c| {
+                if c.is_ascii_alphabetic() {
+                    Some(c.to_ascii_lowercase())
+                } else {
+                    None
+                }
+            });
             let file = match first_letter {
                 None => other_file.get_or_insert_with(|| {
                     File::create("data/other.txt").expect("failed to create other.txt")
