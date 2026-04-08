@@ -1,20 +1,8 @@
 ## Text Merge Challenge
 
-Contains harness code and boilerplate for a timestamp-merge coding challenge.
+Contains input data for a timestamp-merge coding challenge.
 
-## Usage
-
-To populate the input data files, run:
-
-```
-cargo run --bin exploder
-```
-
-To run your app, run:
-
-```
-cargo run --bin app
-```
+You can get the input data from the Releases page.
 
 # Credits
 
